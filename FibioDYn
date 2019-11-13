@@ -1,0 +1,29 @@
+
+def fibonacci(n):
+    global counter
+
+    FibArray = [0, 1]
+
+    while len(FibArray) < n + 1:
+        FibArray.append(0)
+
+    if n <= 1:
+        return n
+    else:
+        counter += 1
+        if FibArray[n - 1] == 0:
+            FibArray[n - 1] = fibonacci(n - 1)
+
+
+        if FibArray[n - 2] == 0:
+            FibArray[n - 2] = fibonacci(n - 2)
+
+
+    FibArray[n] = FibArray[n - 2] + FibArray[n - 1]
+    return FibArray[n]
+counter = 0
+
+print(fibonacci(5))
+print(counter*2)
+
+
